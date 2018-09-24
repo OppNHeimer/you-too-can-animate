@@ -38,7 +38,7 @@ In this tutorial you will create an SVG with a single path. However, SVGs often 
 
 Head to [Vectr.com](https://vectr.com/) and click the 'Use Online' button to launch the web-based editor. No registration required! It will look something like this:
 
-![blank vectr editor](./vectr_blank_editor.png)
+![blank vectr editor](./images/vectr_blank_editor.png)
 
 In the top left you can see the 'Layers' tab. If you are new to this type of software, you can think of layers as a stack of transparent sheets. Each layer can be edited individually without impacting the others. You will see a new layer in this column when you add a reference image and again when drawing a path.
 
@@ -51,19 +51,19 @@ Finally, once finished, you will export your SVG using the export button at the 
 ### Upload an Image
 Choose a reference image from your computer or find one online and download it. Keep it simple. Images with clear lines or high-contrast are best. It is difficult and tedious to express fine detail when drawing by hand. Use the upload button or drag-and-drop. Once uploaded, you will see an 'image' layer in the left column. Resize your image to fit the page by dragging any corner (**tip: hold shift to maintain the image's original aspect ratio**)
 
-![vectr with image](./vectr_with_image.png)
+![vectr with image](./images/vectr_with_image.png)
 
 ### Sketch Your Path
 
 Sketch. Meaning do this step quickly and loosely. It is easy to add, remove, and tweak nodes along your path later. Creating a single path to capture your reference image may take a few tries. A rough path at this stage allows you to experiment and make changes quickly. Click the pen tool then click any location on your image to start a path. Each following click adds a new node and extends your path.
 
-![vectr with started path](./vectr_started_path.png)
+![vectr with started path](./images/vectr_started_path.png)
 
 Continue adding nodes along the major lines of your reference image. It may take a few tries to capture your image with a single path. The delete key will remove the last node in your path. You can also drag existing nodes if you need to reposition.
 
 You may want to hide the reference image to get a better idea of what your finished SVG will look like. Hover over your image layer and click the eye icon to toggle that layer's visibility.
 
-![toggle image visibility gif](./toggle_image.gif)
+![toggle image visibility gif](./images/toggle_image.gif)
 
 ### Refine Your Path
 
@@ -72,15 +72,15 @@ There are several basic ways to edit a path to better fit an image:
 - Add a new node: click anywhere along your existing path
 - Remove a node: click any existing node to select it and then press the delete key
 
-![edit node demo](./vectr_edit_node_1.gif)
+![edit node demo](./images/vectr_edit_node_1.gif)
 
 You may have noticed small circles or "handles" next to each node in your path. These handles adjust the curvature of nodes. Drag the handle away from its node to soften the curve.
 
-![edit node demo](./vectr_edit_node_2.gif)
+![edit node demo](./images/vectr_edit_node_2.gif)
 
 Double clicking a node toggles between two methods for adjusting a curve. Play with both!
 
-![edit node demo 2](./vectr_edit_node_3.gif)
+![edit node demo 2](./images/vectr_edit_node_3.gif)
 
 #### A Few Tips
 - Don't sweat the small stuff - illustration is about conveying more with less. It is impossible to capture every detail so be selective about which elements to express. Try removing nodes to simplify your path.
@@ -89,28 +89,28 @@ Double clicking a node toggles between two methods for adjusting a curve. Play w
 ### Export Your SVG
 Once satisfied with your path, it is time to export! First, click the path layer to select it for export. You do not want your reference image included in the exported file. You will see a grey rectangle surrounding only the path. Then click the export button.
 
-![pre export steps](./vectr_pre_export.png)
+![pre export steps](./images/vectr_pre_export.png)
 
 On the export page, select 'selection' and double check that you **do not** see your reference image behind your path. Then click download to save your SVG!
 
-![export page](./vectr_export.png)
+![export page](./images/vectr_export.png)
 
 ## Clean Your SVG
 SVG cleaners do a few helpful things. Cleaners remove unnecessary code and expose nicely formatted XML code used in the next step.
 
 Navigate to [SVGOMG](https://jakearchibald.github.io/svgomg/) and upload the SVG file downloaded from Vectr (it is likely in your downloads folder entitled 'untitled.svg')
 
-![blank SVGOMG](./svgomg_blank.png)
+![blank SVGOMG](./images/svgomg_blank.png)
 
 After uploading, you will see a column of switches on the right hand side. Leave the default settings as-is and click the 'copy as text' button just below the paint bucket. You will paste this text in the next step.
 
-![SVG copy button](./svgomg_copy.png)
+![SVG copy button](./images/svgomg_copy.png)
 
 ## Animate!
 
 Navigate to [CodePen](https://codepen.io/) and create a new "Pen", an editor where you will write a little code to animate your SVG.
 
-![new code pen](./code_pen_new.gif)
+![new code pen](./images/code_pen_new.gif)
 
 In the new editor you'll notice three text areas at the top with the headings 'HTML', 'CSS', and 'JS'. Hypertext Markup Language, Cascading Style Sheets, and JavaScript are standard languages used to create web pages and applications. HTML describes the content and structure of a webpage and CSS describes the style or presentation of that HTML. Ignore the JS section for this tutorial.
 
@@ -118,7 +118,7 @@ In the new editor you'll notice three text areas at the top with the headings 'H
 
 Paste the SVG code copied from [SVGOMG](https://jakearchibald.github.io/svgomg/) into the HTML area, this is the content you will animate with CSS. Your SVG will appear in the white area below.
 
-![code pen with HTML](./code_pen_html.png)
+![code pen with HTML](./images/code_pen_html.png)
 
 **Do not** edit this HTML code but notice its structure. At the top and bottom you can see `<svg {don't worry about the junk in here}>` and `</svg>`. These are called "open" and "close tags". They denote the beginning and end of an HTML element, in this case, an SVG. HTML elements can be nested, meaning they can contain other elements. Everything between the open and close SVG tags are parts of your SVG. You should recognize the enclosed `path` tag. The path tag looks a little bit different `<path d="{your path coordinates}" />`.  It does not contain any other HTML elements, so it is "self closing".
 
@@ -154,7 +154,7 @@ path {
 
 A "stroke" is the line that follows a path. Until now, the path has been drawn with a solid stroke, meaning a single continuous line. The `stroke-dasharray` property makes a stroke dashed and its value specifies the length of each dash.
 
-![path with dash array](./code_pen_dasharray.gif)
+![path with dash array](./images/code_pen_dasharray.gif)
 
 Next, define the animation. Paste the following keyframe definition on a new line in the CSS area. You will not see any change to the SVG just yet.
 
@@ -173,7 +173,7 @@ Next, define the animation. Paste the following keyframe definition on a new lin
 
 This keyframe definition describes a gradual change in the `stroke-dashoffset` property. It specifies start and end values; CSS keyframes can fill in the rest. The `stroke-dashoffset` property describes where the along the path the stroke starts. Its value specifies the distance from the beginning of the path.
 
-![stroke dashoffset example](./code_pen_strokeoffset.gif)
+![stroke dashoffset example](./images/code_pen_strokeoffset.gif)
 
 Finally, it is time to apply the animation. Add `animation: draw 2s infinite` inside your `path` css selector. The animation property can take several values. This example receives `draw` the name of the keyframe animation, `2s` the duration of the animation in seconds, and `infinite` a keyword specifying that the animation should repeat indefinitely. Your complete CSS should look something like this:
 
@@ -203,7 +203,7 @@ Once your SVG is in motion, experiment with the `stroke-dasharray`, and `stroke-
 
 All of the CSS properties used in this tutorial can take a variety of values. Combinations of which can change the effect of your animation greatly.
 
-![pear examples](./finished_pear_examples.gif)
+![pear examples](./images/finished_pear_examples.gif)
 
 In particular, read into [animation](https://developer.mozilla.org/en-US/docs/Web/CSS/animation), [stroke-dasharray](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray), and [@keyframes](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) to customize your animation further.
 
