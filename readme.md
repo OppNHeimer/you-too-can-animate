@@ -1,6 +1,6 @@
 # You Too Can Animate: SVG line animation
 
-![computer gif](./computer.gif)
+![computer gif](./images/computer.gif)
 
 In this tutorial, you will create a custom SVG line-drawing and animate it with CSS keyframe animations.
 
@@ -24,7 +24,7 @@ SVGs or Scalable Vector Graphics are super. They are:
 
 In essence, an SVG file creates an image using xy-coordinates. These coordinates are grouped into “paths” which describe lines or shapes.
 
-![incomplete triangle](./incomplete_triangle.png)
+![incomplete triangle](./images/incomplete_triangle.png)
 <!-- use gif showing square being zoomed in on -->
 The path to describe the above triangle could look like this:
 ```xml
