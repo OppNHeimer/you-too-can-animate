@@ -24,7 +24,7 @@ SVGs or Scalable Vector Graphics are super. They are:
 - supported by all modern web browsers
 - defined in XML which is a markup language that can be used within an HTML file.
 
-In essence, an SVG file creates an image using xy-coordinates. These coordinates are grouped into “paths” which describe lines or shapes.
+In essence, an SVG file creates an image using xy-coordinates or "points". These points are grouped into “paths” which describe lines or shapes.
 
 ![incomplete triangle](./images/incomplete_triangle.png)
 <!-- use gif showing square being zoomed in on -->
@@ -32,7 +32,7 @@ The path to describe the above triangle could look like this:
 ```xml
     <path d="M0 0 L100 0 L50 100 L5 10" />
 ```
-**Don't fret, you will never need to write SVG paths by hand.** However, notice the number pairs following each `M` and `L`. These are x y coordinates marking each of the triangle's vertices or "nodes" along our path. Unlike raster image formats like JPEGs and PNGs, you won't see the pixels in enlarged SVGs. Increasing the image size simply increases the distance between nodes. No matter the size, SVG paths are filled smoothly.
+**Don't fret, you will never need to write SVG paths by hand.** However, notice the number pairs following each `M` and `L`. These are x y coordinates marking each of the triangle's points along the path. Unlike raster image formats like JPEGs and PNGs, you won't see the pixels in enlarged SVGs. Increasing the image size simply increases the distance between points. No matter the size, SVG paths are filled smoothly.
 
 In this tutorial you will create an SVG with a single path. However, SVGs often contain many paths to describe more complex images.
 
@@ -44,7 +44,7 @@ Head to [Vectr.com](https://vectr.com/) and click the 'Use Online' button to lau
 
 In the top left you can see the 'Layers' tab. If you are new to this type of software, you can think of layers as a stack of transparent sheets. Each layer can be edited individually without impacting the others. You will see a new layer in this column when you add a reference image and again when drawing a path.
 
-Moving down, you will notice the pen tool. The pen tool creates a path by connecting nodes in a line. This is the tool used in this tutorial. The other tools create shapes or text which can also be exported as SVGs and animated.
+Moving down, you will notice the pen tool. The pen tool creates a path by connecting points in a line. This is the tool used in this tutorial. The other tools create shapes or text which can also be exported as SVGs and animated.
 
 Lower still is the upload image button.
 
@@ -57,11 +57,11 @@ Choose a reference image from your computer or find one online and download it. 
 
 ### Sketch Your Path
 
-Sketch. Meaning do this step quickly and loosely. It is easy to add, remove, and tweak nodes along your path later. Creating a single path to capture your reference image may take a few tries. A rough path at this stage allows you to experiment and make changes quickly. Click the pen tool then click any location on your image to start a path. Each following click adds a new node and extends your path.
+Sketch. Meaning do this step quickly and loosely. It is easy to add, remove, and tweak points along your path later. A rough path at this stage allows you to experiment and make changes quickly. Click the pen tool then click any location on your image to start a path. Each following click adds a new point and extends your path.
 
 ![vectr with started path](./images/vectr_started_path.png)
 
-Continue adding nodes along the major lines of your reference image. It may take a few tries to capture your image with a single path. The delete key will remove the last node in your path. You can also drag existing nodes if you need to reposition.
+Continue adding points along the major lines of your reference image. It may take a few tries to capture your image with a single path. The delete key will remove the last point in your path. You can also drag existing points if you need to reposition.
 
 You may want to hide the reference image to get a better idea of what your finished SVG will look like. Hover over your image layer and click the eye icon to toggle that layer's visibility.
 
@@ -70,22 +70,22 @@ You may want to hide the reference image to get a better idea of what your finis
 ### Refine Your Path
 
 There are several basic ways to edit a path to better fit an image:
-- Reposition a node: drag any existing node
-- Add a new node: click anywhere along your existing path
-- Remove a node: click any existing node to select it and then press the delete key
+- Reposition a point - drag any existing point
+- Add a new point - click anywhere along your existing path
+- Remove a point - click any existing point to select it and then press the delete key
 
-![edit node demo](./images/vectr_edit_node_1.gif)
+![edit point demo](./images/vectr_edit_node_1.gif)
 
-You may have noticed small circles or "handles" next to each node in your path. These handles adjust the curvature of nodes. Drag the handle away from its node to soften the curve.
+You may have noticed small circles or "corner widgets" next to each point in your path. These widgets adjust the curvature of points. Drag the widget away from its point to soften the curve.
 
-![edit node demo](./images/vectr_edit_node_2.gif)
+![edit point demo](./images/vectr_edit_node_2.gif)
 
-Double clicking a node toggles between two methods for adjusting a curve. Play with both!
+Double clicking a point toggles between two methods for adjusting a curve. Play with both!
 
-![edit node demo 2](./images/vectr_edit_node_3.gif)
+![edit point demo 2](./images/vectr_edit_node_3.gif)
 
 #### A Few Tips
-- Don't sweat the small stuff - illustration is about conveying more with less. It is impossible to capture every detail so be selective about which elements to express. Try removing nodes to simplify your path.
+- Don't sweat the small stuff - illustration is about conveying more with less. It is impossible to capture every detail so be selective about which elements to express. Try removing points to simplify your path.
 - You don't get points for realism - hide your reference image. Experiment with proportions and the intensity of curves to give your illustration style.
 
 ### Export Your SVG
@@ -173,7 +173,7 @@ Next, define the animation. Paste the following keyframe definition on a new lin
 
 `@keyframes` is an "at-rule" or a CSS keyword that describes a behavior. This one describes steps in an animation. The following word, 'draw', is the name and is used later to reference this animation. You can name the animation anything you like. `from` and `to` are keyframe selectors to specify what the animation will look like at its beginning and end.
 
-This keyframe definition describes a gradual change in the `stroke-dashoffset` property. It specifies start and end values; CSS keyframes can fill in the rest. The `stroke-dashoffset` property describes where the along the path the stroke starts. Its value specifies the distance from the beginning of the path.
+This keyframe definition describes a gradual change in the `stroke-dashoffset` property. It specifies start and end values; CSS keyframes can fill in the rest. The `stroke-dashoffset` property describes where along the path the stroke starts. Its value specifies the distance from the beginning of the path.
 
 ![stroke dashoffset example](./images/code_pen_strokeoffset.gif)
 
@@ -201,11 +201,12 @@ path {
 }
 ```
 
-Once your SVG is in motion, experiment with the `stroke-dasharray`, and `stroke-dashoffset` values to find a dash length that suits your image. For a smooth animation, ensure your `stroke-dashoffset` value is a multiple of the `stroke-dasharray` value (at least double).
+Once your SVG is in motion, experiment with the `stroke-dasharray`, and `stroke-dashoffset` values to find a dash length that suits your image. For a smooth animation, ensure your 'to' `stroke-dashoffset` value is a multiple of the `stroke-dasharray` value (at least double).
 
 All of the CSS properties used in this tutorial can take a variety of values. Combinations of which can change the effect of your animation greatly.
 
 ![pear examples](./images/finished_pear_examples.gif)
+Check out the [example codepen](https://codepen.io/OppNHeimer/pen/EeBzMw)
 
 In particular, read into [animation](https://developer.mozilla.org/en-US/docs/Web/CSS/animation), [stroke-dasharray](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray), and [@keyframes](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) to customize your animation further.
 
