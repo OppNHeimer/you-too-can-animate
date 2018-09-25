@@ -206,7 +206,7 @@ Once your SVG is in motion, experiment with the `stroke-dasharray`, and `stroke-
 All of the CSS properties used in this tutorial can take a variety of values. Combinations of which can change the effect of your animation greatly.
 
 ![pear examples](./images/finished_pear_examples.gif)
-Check out the [example codepen](https://codepen.io/OppNHeimer/pen/EeBzMw)
+Check out the code for this example on [CodePen](https://codepen.io/OppNHeimer/pen/EeBzMw)!
 
 In particular, read into [animation](https://developer.mozilla.org/en-US/docs/Web/CSS/animation), [stroke-dasharray](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray), and [@keyframes](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) to customize your animation further.
 
