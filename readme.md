@@ -2,7 +2,7 @@
 
 ![computer gif](./images/computer.gif)
 
-Animations are pleasing to look at and bolster usability within any application. Animations can provide important feedback and make users more patient. Animation makes interacting with a technology more fun and visually pleasing yet all too often, sites are static and feel inhuman. The focus of this post is not to make a case for adding animation to your next project, but to demonstrate how little the cost of doing so can be. Delighting your users might be easier than you think!
+Animations are pleasing to look at and bolster the usability of an application. Animations can provide important feedback and make users more patient. Animation makes interacting with a technology more fun and visually pleasing yet all too often, sites are static and feel inhuman. The focus of this post is not to make a case for adding animation to your next project, but to demonstrate how little the cost of doing so can be. Delighting your users might be easier than you think!
 
 In this tutorial, you will create a custom SVG line-drawing and animate it with CSS keyframe animations.
 
