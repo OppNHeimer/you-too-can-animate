@@ -207,5 +207,5 @@ All of the CSS properties used in this tutorial can take a variety of values. Co
 
 In particular, read into [animation](https://developer.mozilla.org/en-US/docs/Web/CSS/animation), [stroke-dasharray](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray), and [@keyframes](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) to customize your animation further.
 
-Now you have the tools to build an animated SVG line drawing. Add a little motion into your next project!
+Now you have the tools to build an animated SVG line drawing. Add a little motion to your next project!
 
