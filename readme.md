@@ -105,7 +105,7 @@ Navigate to [SVGOMG](https://jakearchibald.github.io/svgomg/) and upload the SVG
 
 ![blank SVGOMG](./images/svgomg_blank.png)
 
-After uploading, you will see a column of switches on the right hand side. Leave the default settings as-is and click the 'copy as text' button just below the paint bucket. You will paste this text in the next step.
+After uploading, you will see a column of switches on the right hand side. Leave the default settings as-is and click the 'copy as text' button just below the paint bucket. You will paste the copied text in the next step.
 
 ![SVG copy button](./images/svgomg_copy.png)
 
