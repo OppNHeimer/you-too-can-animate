@@ -8,6 +8,7 @@ In this tutorial, you will create a custom SVG line-drawing and animate it with 
 
 ## What you will need:
 This tutorial uses three free web-based tools and requires no prior web-development, animation, or graphics editing experience.
+> **DISCLAIMER: It is highly suggested to follow this tutorial using [Google Chrome](https://www.google.com/chrome/), [Firefox](https://www.mozilla.org/en-US/firefox/new/), or Microsoft Edge.** Vectr and CodePen may not work reliably on Safari or Internet Explorer.
 
 ### Vectr
 [Vectr](https://vectr.com/) is an online vector graphics editor. It is free and has intuitive tools for drawing and exporting SVGs.
@@ -61,7 +62,7 @@ Sketch. Meaning do this step quickly and loosely. It is easy to add, remove, and
 
 ![vectr with started path](./images/vectr_started_path.png)
 
-Continue adding points along the major lines of your reference image. It may take a few tries to capture your image with a single path. The delete key will remove the last point in your path. You can also drag existing points if you need to reposition.
+Continue adding points along the major lines of your reference image. It may take a few tries to capture your image with a single path. The delete key will remove the last point in your path. You can also drag existing points if you need to reposition. Depending on the image and your preference, you may choose to connect the beginning and end of your path to form a closed loop.
 
 You may want to hide the reference image to get a better idea of what your finished SVG will look like. Hover over your image layer and click the eye icon to toggle that layer's visibility.
 
@@ -114,7 +115,7 @@ Navigate to [CodePen](https://codepen.io/) and create a new "Pen", an editor whe
 
 ![new code pen](./images/code_pen_new.gif)
 
-In the new editor you'll notice three text areas at the top with the headings 'HTML', 'CSS', and 'JS'. Hypertext Markup Language, Cascading Style Sheets, and JavaScript are standard languages used to create web pages and applications. HTML describes the content and structure of a webpage and CSS describes the style or presentation of that HTML. Ignore the JS section for this tutorial.
+In the new editor you will notice three text areas at the top with the headings 'HTML', 'CSS', and 'JS'. Hypertext Markup Language, Cascading Style Sheets, and JavaScript are standard languages used to create web pages and applications. HTML describes the content and structure of a webpage and CSS describes the style or presentation of that HTML. Ignore the JS section for this tutorial.
 
 ### HTML
 
@@ -122,7 +123,7 @@ Paste the SVG code copied from [SVGOMG](https://jakearchibald.github.io/svgomg/)
 
 ![code pen with HTML](./images/code_pen_html.png)
 
-**Do not** edit this HTML code but notice its structure. At the top and bottom you can see `<svg {don't worry about the junk in here}>` and `</svg>`. These are called "open" and "close tags". They denote the beginning and end of an HTML element, in this case, an SVG. HTML elements can be nested, meaning they can contain other elements. Everything between the open and close SVG tags are parts of your SVG. You should recognize the enclosed `path` tag. The path tag looks a little bit different `<path d="{your path coordinates}" />`.  It does not contain any other HTML elements, so it is "self closing".
+**Do not** edit this HTML code but notice its structure. At the top and bottom you can see `<svg [don't worry about the junk in here]>` and `</svg>`. These are called "open" and "close tags". They denote the beginning and end of an HTML element, in this case, an SVG. HTML elements can be nested, meaning they can contain other elements. Everything between the open and close SVG tags are parts of your SVG. You should recognize the enclosed `path` tag. The path tag looks a little bit different `<path d="[your path coordinates]" />`.  It does not contain any other HTML elements, so it is "self closing".
 
 ### CSS
 
@@ -144,7 +145,7 @@ svg {
 }
 ```
 
-The `svg` CSS selector targets the entire `svg` HTML element. The height and width of your svg should have changed to fill the entire window below your code. The values `100vh` and `100vw` specify that the SVG's height and width should be 100% of the view height and view width respectively. If you resize the display area or your browser window, the SVG will resize to match. A height of `50vh` would specify half of the window's height. Your SVG also has a fun new background color! You can choose your own from a complete list of named CSS colors [here](https://css-tricks.com/snippets/css/named-colors-and-hex-equivalents/).
+The `svg` CSS selector targets the entire `svg` HTML element. The height and width of your svg should have changed to fill the entire window below your code. The values `100vh` and `100vw` specify that the SVG's height and width should be 100% of the view height and view width respectively. If you resize the display area or your browser window, the SVG will resize to match. A height of `50vh` would specify half of the window's height. Your SVG also has a fun new background color! You can choose your own from a [complete list of named CSS colors](https://css-tricks.com/snippets/css/named-colors-and-hex-equivalents/).
 
 Next, target the `path` element. On a new line, paste the following code after the `svg` selector's closing bracket ( `}` ) :
 
@@ -173,7 +174,7 @@ Next, define the animation. Paste the following keyframe definition on a new lin
 
 `@keyframes` is an "at-rule" or a CSS keyword that describes a behavior. This one describes steps in an animation. The following word, 'draw', is the name and is used later to reference this animation. You can name the animation anything you like. `from` and `to` are keyframe selectors to specify what the animation will look like at its beginning and end.
 
-This keyframe definition describes a gradual change in the `stroke-dashoffset` property. It specifies start and end values; CSS keyframes can fill in the rest. The `stroke-dashoffset` property describes where along the path the stroke starts. Its value specifies the distance from the beginning of the path.
+This keyframe definition describes a gradual change in the `stroke-dashoffset` property. It specifies start and end values; CSS keyframes can fill in the rest. The `stroke-dashoffset` property describes where along the path the stroke starts. Its value specifies the distance from the beginning of the path. By animating the `stroke-dashoffset` property, you essentially push the stroke along the path over the course of the animation.
 
 ![stroke dashoffset example](./images/code_pen_strokeoffset.gif)
 
@@ -208,7 +209,7 @@ All of the CSS properties used in this tutorial can take a variety of values. Co
 ![pear examples](./images/finished_pear_examples.gif)
 Check out the code for this example on [CodePen](https://codepen.io/OppNHeimer/pen/EeBzMw)!
 
-In particular, read into [animation](https://developer.mozilla.org/en-US/docs/Web/CSS/animation), [stroke-dasharray](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray), and [@keyframes](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) to customize your animation further.
+In particular, read into [animation](https://developer.mozilla.org/en-US/docs/Web/CSS/animation), [stroke-dasharray](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray), and [@keyframes](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) to customize your animation further. There are also many other [CSS properties that can be applied to SVGs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute)
 
 Now you have the tools to build an animated SVG line drawing. Add a little motion to your next project!
 
